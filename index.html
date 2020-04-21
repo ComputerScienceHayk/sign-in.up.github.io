@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>LogIn</title>
+	<link rel="stylesheet" href="style.css">
+</head>
+<body>
+	<div class="container">
+
+  <div class="login" id="go">
+  
+    <h1 class="login-heading">SignIn/SignUp
+      <span data-line="••••••">••••••</span> </h1>
+      
+    <form method="post">
+      
+        <input type="email" 
+               name="user" 
+               placeholder="email@.com"  
+               class="input-txt" required/>
+    
+        <input type="password" 
+               name="password" 
+               placeholder="Password" 
+               minlength="5"
+               class="input-txt" value="secret" />
+          <div class="login-footer">
+            <a href="#go" class="btn js-submit">
+              <span data-proccess="Processing...">Continue</span>
+            </a>        
+          </div>
+      </form>
+
+  </div>
+ </div>
+</body>
+</html>

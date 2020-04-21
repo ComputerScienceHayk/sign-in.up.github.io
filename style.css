@@ -1,0 +1,245 @@
+@import url(https://fonts.googleapis.com/css?family=Josefin+Sans);
+body {
+  -webkit-user-select: none;
+    -webkit-touch-callout: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    -khtml-user-select: none;
+    -o-user-select: none;
+    overflow-x: hidden;
+}
+@keyframes loading {
+  to {
+    max-width: 100%;
+  }
+}
+@keyframes animLogin {
+  20% {
+    transform: translateY(60px);
+  }
+  100% {
+    transform: translateY(-1000px);
+  }
+}
+@keyframes animRoot {
+  100% {
+    background-position: center -10px;
+  }
+}
+@keyframes animRoot2 {
+  from {
+    height: 0px;
+  }
+  to {
+    transform: translateY(100px);
+    height: 1200px;
+  }
+}
+@keyframes animClaim {
+  from {
+    opacity: 0;
+  }
+  100% {
+    margin-top: 10%;
+    opacity: 1;
+  }
+}
+:root {
+  font-family: 'Josefin Sans', sans-serif;
+  font-size: 100%;
+  background-color: #3f0d12;
+  background: rgb(2,0,36);
+ background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(93,4,11,1) 9%, rgba(203,111,170,1) 18%, rgba(255,0,74,1) 30%, rgba(139,11,24,1) 43%, rgba(196,6,26,1) 70%, rgba(150,24,69,1) 86%, rgba(143,3,13,1) 90%);
+
+}
+
+::-webkit-input-placeholder {
+  font-size: .7rem;
+  color: white;
+  text-shadow: -1px 1px 1px #000a57, -2px 1px 1px #000a57;
+}
+
+:-moz-placeholder {
+  font-size: .7rem;
+  color: white;
+  text-shadow: -1px 1px 1px #000a57, -2px 1px 1px #000a57;
+}
+
+::-moz-placeholder {
+  font-size: .7rem;
+  color: white;
+  text-shadow: -1px 1px 1px #000a57, -2px 1px 1px #000a57;
+}
+
+:-ms-input-placeholder {
+  font-size: .7rem;
+  color: white;
+  text-shadow: -1px 1px 1px #000a57, -2px 1px 1px #000a57;
+}
+
+html {
+  transition: transform 1s linear;
+  overflow: hidden;
+}
+html.anim {
+  animation: animRoot .2s 2s ease-in forwards;
+}
+html.anim .login {
+  animation: animLogin 1s 2s forwards;
+}
+html.anim:after {
+  display: inline-block;
+  animation: animRoot2 1s 1.5s linear forwards;
+}
+html.anim:before {
+  animation: animClaim 2s 2s forwards;
+}
+html.anim .content-after-anim {
+  animation: animClaim .8s 4s forwards;
+}
+html:after {
+  display: block;
+  content: '';
+  width: 100%;
+  background: url("https://farm4.staticflickr.com/3854/15275282172_edc94e59c6_b.jpg") no-repeat center center fixed;
+  background-size: cover;
+  -webkit-filter: brightness(0.55);
+  transform: translateY(1000px);
+}
+html:before {
+  opacity: 0;
+  display: block;
+  content: 'Hi';
+  color: white;
+  font-size: 8em;
+  text-indent: -130px;
+  width: 100px;
+  height: 100px;
+  background: white;
+  margin: 0 auto;
+}
+
+.login {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  width: 300px;
+  height: 220px;
+  padding: 15px;
+  margin: auto;
+  background: rgba(0, 0, 0, 0.5);
+}
+
+.login-heading {
+  font-size: 1.9rem;
+  font-weight: 100;
+  line-height: 3rem;
+  color: white;
+  text-align: center;
+  text-shadow: -1px 1px 1px #000a57, -2px 1px 1px #000a57;
+}
+.login-heading [data-line] {
+  display: inline-block;
+  position: absolute;
+  left: 0;
+  bottom: 30px;
+  right: 0;
+  margin: auto;
+  width: 85px;
+  color: grey;
+}
+.login-heading [data-line]:before {
+  display: none;
+  content: attr(data-line);
+  position: absolute;
+  top: 0px;
+  z-index: 10;
+  max-width: 0;
+  overflow: hidden;
+  color: #b1e699;
+  animation: loading .8s .4s forwards infinite;
+}
+
+.input-txt {
+  box-sizing: border-box;
+  padding: .8rem .9rem;
+  width: 300px;
+  margin-bottom: 1rem;
+  border: 1px solid #797e73;
+  box-shadow: inset 0px 1px 1px #000a57, inset 1px 0px 1px #000a57, inset -1px 0px 1px #000a57, inset 0px -1px 1px #000a57, 0px 1px 1px #000424, 1px 0px 1px black, -1px 0px 1px black, 0px -1px 1px black;
+  background: rgba(20, 30, 100, 0.2);
+  color: white;
+}
+
+:target [data-line]:before {
+  display: inline-block;
+}
+
+:target .btn {
+  opacity: .85;
+  cursor: wait;
+}
+
+:target .btn span {
+  transform: translate3d(0px, 30px, -280px) rotateX(90deg);
+}
+
+.btn {
+  display: inline-block;
+  width: 300px;
+  height: 45px;
+  vertical-align: top;
+  perspective: 400px;
+  perspective-origin: 50% 50%;
+}
+.btn span {
+  position: relative;
+  display: inline-block;
+  box-sizing: border-box;
+  padding: .8rem .9rem;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to right, #BF953F, #FCF6BA, #B38728, #FBF5B7, #AA771C);
+  border: none;
+  font-size: 1.2rem;
+  text-shadow: -1px 1px 1px #000a57;
+  text-align: center;
+  text-decoration: none;
+  color: white;
+  transform-origin: 50% 0;
+  transform-style: preserve-3d;
+  transition: all .4s ease-in-out;
+}
+.btn span:before {
+  content: attr(data-proccess);
+  position: absolute;
+  left: 0;
+  top: 0;
+  box-sizing: border-box;
+  display: inline-block;
+  padding: inherit;
+  width: inherit;
+  height: inherit;
+  background: linear-gradient(to right, #BF953F, #FCF6BA, #B38728, #FBF5B7, #AA771C);
+  border: inherit;
+  box-shadow: inherit;
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 1.1em;
+  text-shadow: none;
+  transform-origin: 50% 0%;
+  transform: translate3d(0px, 100%, 0px) rotateX(-90deg);
+  transition: all .4s ease-in-out;
+}
+
+.content-after-anim {
+  position: absolute;
+  right: 1rem;
+  top: 0%;
+  opacity: 0;
+}
+.content-after-anim > a {
+  color: white;
+}
